@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	String flag = request.getParameter("flag")==null ? "" : request.getParameter("flag");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +10,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <title>t08.jsp</title>
+  <script>
+  'use strict';
+  	if('<%=flag%>'=='no') alert("전송 실패 다시 입력해주세요");
+  	
+  	function fCheck() {
+  		
+  	}
+
+  </script>
 </head>
 <body>
 <p><br/></p>
@@ -24,12 +36,12 @@
   	  <input type="radio" name="gender" value="여자" class="me-1" checked />여자
   	</div>
   	<div class="mb-3"> 취미 &nbsp;&nbsp;
-  	  <input type="checkbox" name="hobby" value="등산" class="me-1" />등산 &nbsp;
-  	  <input type="checkbox" name="hobby" value="낚시" class="me-1" />낚시 &nbsp;
-  	  <input type="checkbox" name="hobby" value="바둑" class="me-1" />바둑 &nbsp;
-  	  <input type="checkbox" name="hobby" value="수영" class="me-1" />수영 &nbsp;
-  	  <input type="checkbox" name="hobby" value="배드민턴" class="me-1" />배드민턴 &nbsp;
-  	  <input type="checkbox" name="hobby" value="바이크" class="me-1" />바이크
+  	  <input type="checkbox" name="hobbys" value="등산" class="me-1" />등산 &nbsp;
+  	  <input type="checkbox" name="hobbys" value="낚시" class="me-1" />낚시 &nbsp;
+  	  <input type="checkbox" name="hobbys" value="바둑" class="me-1" />바둑 &nbsp;
+  	  <input type="checkbox" name="hobbys" value="수영" class="me-1" />수영 &nbsp;
+  	  <input type="checkbox" name="hobbys" value="배드민턴" class="me-1" />배드민턴 &nbsp;
+  	  <input type="checkbox" name="hobbys" value="바이크" class="me-1" />바이크
   	</div>
   	<div class="mb-3">직업
   	  <select name="job" class="form-control">
@@ -43,7 +55,7 @@
   	  </select>
   	</div>
   	<div class="mb-3">가본산
-  	  <select name="mountain" size="5" multiple class="form-control">
+  	  <select name="mountains" size="5" multiple class="form-control">
   	    <option>백두산</option>
   	    <option>한라산</option>
   	    <option>태백산</option>
