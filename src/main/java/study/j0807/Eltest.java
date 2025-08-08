@@ -24,5 +24,4 @@ public class Eltest extends HttpServlet{
 		String viewPage = "/study/0807/el.jsp";
 		request.getRequestDispatcher(viewPage).forward(request, response);
 	}
-
 }
