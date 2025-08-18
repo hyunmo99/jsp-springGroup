@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	String applicationSw = request.getParameter("applicationSw");
+
+	application.removeAttribute(applicationSw);
+	pageContext.setAttribute("applicationSw", applicationSw);
+%>
+
+<script >
+	alert("${applicationSw}세션이 삭제 되었습니다.");
+	location.href='t3_Application.jsp';
+</script>
