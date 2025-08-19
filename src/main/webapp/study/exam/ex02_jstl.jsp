@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%
 	String[] cards ={"국민", "BC", "LG", "현대", "삼성", "농협", "BC"};
-	for(String card :cards) {
-		out.println(card+" / ");
-	}
 	pageContext.setAttribute("cards", cards);
-	
 	
 	String[][] members = {
 			{"홍길동", "25", "서울"},
@@ -36,6 +33,70 @@
     5.cards배열의 내용중, 첫번째 카드의 배경색은 노랑, 마지막카드의 배경색은 하늘색 으로 출력하시오.
     6.cards배열의 내용중, '국민카드'는 파랑색, '삼성카드'는 빨강색, 첫번째 카드의 배경색은 노랑, 마지막카드의 배경색은 하늘색 으로 출력하시오.
   </pre>
+  <hr/>
+  <div>
+  	<b>1.구구단 5단을 출력하세요</b>
+  	<c:forEach var="i" begin="1" end="10" >
+  		5 * ${i} = ${5*i}<br/>
+  	</c:forEach>
+  </div>
+  <hr/>
+  <div>
+  	<b>2.구구단 3단~5단까지 출력하시오(2중 for문)</b>
+	  <table class="table table-bordered">
+		  <tr>
+		  	<th>3단</th>
+		  	<th>4단</th>
+		  	<th>5단</th>
+		  </tr>
+	  	<c:forEach var="i" begin="1" end="9" >
+				<tr>
+		  		<c:forEach var="j" begin="3" end="5" >
+		  			<td>${j} * ${i} = ${i*j}&emsp;</td>
+		  		</c:forEach>
+				</tr>
+			</c:forEach>
+		</table>
+  </div>
+  <div>
+  	<b>3.members배열의 주소가 '서울'단어에는 빨간색으로 표시해서 출력하시오.(배열에 저장된 자료를 한행에 3개의 항목씩 출력)</b><br/>
+  	<c:forEach var="member" items="${members}">
+  		<c:forEach var="m" items="${member}">
+  		 <c:if test="${fn:contains(m, '서울')}"><font color="red">${m}</font></c:if>
+  		 <c:if test="${!fn:contains(m, '서울')}">${m}</c:if>
+  		</c:forEach>
+  		<br/>
+  	</c:forEach>
+  </div>
+  <br/>
+  <div>
+  	<b>4.members배열의 나이가 25세 미만은 굵고 파랑색 표시</b><br/>
+  	<c:forEach var="member" items="${members}">
+  		<c:forEach var="i" begin="0" end="2">
+  		 <c:if test="${i == 1 && member[1] < 25}"><font color="blue"><b>${member[1]}</b></font></c:if>
+  		 <c:if test="${!(i == 1 && member[1] < 25)}">${member[i]}</c:if>
+  		</c:forEach>
+  		<br/>
+  	</c:forEach>
+  </div>
+  <br/>
+  <div>
+  	<b>5.cards배열의 내용중, 첫번째 카드의 배경색은 노랑, 마지막카드의 배경색은 하늘색 으로 출력하시오.</b><br/>
+  	<c:forEach var="card" items="${cards}" varStatus="st">
+  		<c:if test="${st.first}"><span style="background-color:yellow;">${card}</span></c:if>
+  		<c:if test="${st.last}"><span style="background-color:Skyblue;">${card}</span></c:if>
+  		<c:if test="${!(st.first || st.last)}"><span>${card}</span></c:if>
+  	</c:forEach>
+  </div>
+  <br/>
+  <div>
+  	<b>6.cards배열의 내용중, '국민카드'는 파랑색, '삼성카드'는 빨강색, 첫번째 카드의 배경색은 노랑, 마지막카드의 배경색은 하늘색 으로 출력하시오.</b><br/>
+  	<c:forEach var="card" items="${cards}" varStatus="st">
+  		<span style="color: ${fn:contains(card, '국민') ? 'blue' : (fn:contains(card, '삼성') ? 'red' : 'black')}; 
+  		background-color:${st.first ? 'yellow' : (st.last ? 'Skyblue' : 'white')}; ">${card}</span>
+  	</c:forEach>
+  </div>
+  
 </div>
 <p><br/></p>
 </body>

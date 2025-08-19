@@ -10,11 +10,25 @@
   <meta charset="UTF-8">
 	<jsp:include page="/include/bs5.jsp" />
   <title>ex03_vos.jsp</title>
+  <script>
+		function addform() {
+			const studentform= document.getElementById("studentform");
+			const formNum = studentform.children.length+1;
+			const form = "<div>학생"+formNum+"</div>";
+			studentform.innerHTML += form ;
+		}
+  </script>
 </head>
 <body>
 <p><br/></p>
 <div class="container">
-	<form action="" name="myform" method="post"></form>
+	<form action="" name="myform" method="post">
+		<div id="studentform"></div>
+		
+		<button type="button" class="btn btn-success">성적 처리</button>
+		<button type="button" class="btn btn-primary" onclick="addform()" >학생 추가</button>
+		
+	</form>
   <div id="demo"></div>
 </div>
 <p><br/></p>

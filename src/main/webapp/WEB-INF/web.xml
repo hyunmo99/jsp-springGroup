@@ -11,23 +11,23 @@
   </welcome-file-list>
   
   <!-- Controller처리 -->
-  <servlet>
+ <!--  <servlet>
   	<servlet-name>Test3</servlet-name>
   	<servlet-class>study2.test.Test3</servlet-class>
-  	<!-- 사용불가(같은곳을 호출하게됨)
+  	사용불가(같은곳을 호출하게됨)
   	<servlet-name>Test4</servlet-name>
   	<servlet-class>study2.test.Test4</servlet-class>
-  	 -->
+  	
   </servlet>
   <servlet-mapping>
   	<servlet-name>Test3</servlet-name>
   	<url-pattern>/study2/T3</url-pattern>
-  	<!-- 사용불가(같은곳을 호출하게됨)
+  	사용불가(같은곳을 호출하게됨)
   	<servlet-name>Test4</servlet-name>
   	<url-pattern>/study2/Test4</url-pattern>
-  	 -->
+  	
   </servlet-mapping>
-  <!--  
+   
   <servlet>
   	<servlet-name>Test4</servlet-name>
   	<servlet-class>study2.test.Test4</servlet-class>
@@ -36,9 +36,9 @@
   	<servlet-name>Test4</servlet-name>
   	<url-pattern>/study2/Test4</url-pattern>
   </servlet-mapping>
-   -->
+  
    
-  <!-- 초기값(공통변수) 미리 설정해두기 -->
+  초기값(공통변수) 미리 설정해두기
   <context-param>
     <param-name>officeName</param-name>
     <param-value>Green Company</param-value>
@@ -48,7 +48,7 @@
     <param-value>www.green.com</param-value>
   </context-param>
   
-  <!-- 특정 서블릿에 초기값 할당하기 -->
+  특정 서블릿에 초기값 할당하기
   <servlet>
     <servlet-name>springGroup</servlet-name>
     <servlet-class>study2.init.OfficeInit</servlet-class>
@@ -64,7 +64,7 @@
   <servlet-mapping>
     <servlet-name>springGroup</servlet-name>
     <url-pattern>/springGroup</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
    
   <!-- Filter 처리(controller앞단에서 처리(제어)한다. -->
   <!-- 
