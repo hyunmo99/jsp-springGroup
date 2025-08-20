@@ -19,3 +19,4 @@ DESC friend;
 DROP TABLE friend;
 INSERT INTO friend VALUE (DEFAULT, 'admin', '1234', '관리맨', '관리자', 33, '남자', '서울');
 SELECT *from friend;
+

@@ -26,7 +26,6 @@ public class Login extends HttpServlet {
 				}
 			}
 		}
-		
 		String viewPage = "/WEB-INF/study2/exam/login.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
