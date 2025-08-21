@@ -1,4 +1,4 @@
-package study2.ajax;
+package study2.ajax.friend;
 
 import java.io.IOException;
 
@@ -10,12 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/study2/ajax/FriendList")
-public class AjaxMenu extends HttpServlet{
+@WebServlet("/study2/ajax/friend/FriendMain")
+public class FriendMain extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String str = "작업처리결과";
-		response.getWriter().write(str);
+		
+		String viewPage ="/WEB-INF/study2/ajax/friend/friendMain.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+		dispatcher.forward(request, response);
 	}
 }

@@ -21,26 +21,15 @@ public class LoginSearch2 extends HttpServlet{
 		String mid = request.getParameter("mid")==null ? "" : request.getParameter("mid");
 		
 		LoginDAO dao = new LoginDAO();
+		
 		LoginVO vo = dao.getLoginIdCheck(mid);
 		
-		Map<String, String> map = new HashMap<>();
-		map.put("mid", vo.getMid());
-		map.put("nickName", vo.getNickName());
-		map.put("name", vo.getName());
-		map.put("age", vo.getAge()+"");
-		map.put("gender", vo.getGender());
-		map.put("address", vo.getAddress());
-		System.out.println("map : " + map);
-		
-		//map형식의 자료를 JSON형식으로 변환
-		JSONObject jObj = new JSONObject(map);
-		System.out.println("jObj : " + jObj);
-		response.getWriter().write(jObj+"");
-		
-//		//JSON객체를 문자열로 변환
-//		String str = jObj.toJSONString();
-//		System.out.println("str : " + str);		
-//		response.getWriter().write(str);
+		String str = "";
+		if(vo.getName()==null) str="찾는 자료가 없습니다.";
+		else str= vo.getIdx()+"/"+vo.getMid()+"/"+vo.getNickName()+"/"+vo.getName()+"/"+vo.getAge()+"/"+vo.getGender()+"/"+vo.getAddress();
+
+		//		response.getWriter().write(vo+"");
+		response.getWriter().write(str);
 		
 	}
 }
