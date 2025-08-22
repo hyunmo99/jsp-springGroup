@@ -16,7 +16,7 @@
 <jsp:include page="/include/nav.jsp" />
 <p><br/></p>
 <div class="container">
-<h2>확장자 패턴 연습</h2>
+<h2>확장자 패턴 연습1</h2>
   <hr/>
 	<div>
 		<a href="${ctp}/student/mapping/home.do" class="btn btn-success me-3">Home</a>
@@ -26,7 +26,6 @@
 	</div>  
   <hr/>
   <div id="msg">${msg}</div>
-  
   <hr/>
 </div>
 <p><br/></p>

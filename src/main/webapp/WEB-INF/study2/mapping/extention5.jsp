@@ -9,20 +9,20 @@
 	<jsp:include page="/include/bs5.jsp" />
 
 
-  <title>extention.jsp</title>
+  <title>extention5.jsp</title>
 </head>
 <body>
 <jsp:include page="/include/header.jsp" />
 <jsp:include page="/include/nav.jsp" />
 <p><br/></p>
 <div class="container">
-<h2>확장자 패턴 연습2</h2>
+<h2>확장자 패턴 연습5</h2>
   <hr/>
 	<div>
-		<a href="${ctp}/student/mapping/home.test" class="btn btn-success me-3">Home</a>
-		<a href="${ctp}/student/mapping/guest.test" class="btn btn-primary me-3">Guest</a>
-		<a href="${ctp}/student/mapping/board.test" class="btn btn-secondary me-3">Board</a>
-		<a href="${ctp}/student/mapping/pds.test" class="btn btn-warning me-3">PDS</a>
+		<a href="${ctp}/student/mapping/Home5.test5" class="btn btn-success me-3">Home5</a>
+		<a href="${ctp}/student/mapping/Guest5.test5" class="btn btn-primary me-3">Guest5</a>
+		<a href="${ctp}/student/mapping/Board5.test5" class="btn btn-secondary me-3">Board5</a>
+		<a href="${ctp}/student/mapping/Pds5.test5" class="btn btn-warning me-3">PDS5</a>
 	</div> 
 	 
   <hr/>
