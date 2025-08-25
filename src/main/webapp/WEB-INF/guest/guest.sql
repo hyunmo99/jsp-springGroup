@@ -12,6 +12,9 @@ desc guest;
 
 insert into guest values (default, '관리자', '방명록 서비스를 시작합니다', 'lsiz8297@gmail.com', 'lsiz8297@gmail.com', default, '192.168.50.58' );
 select *from guest;
+select *from guest limit 0, 5; /*1page 5건보기*/
+select *from guest limit 5, 5; --2page 5건보기
 
 
-
+select count(*) as cnt from guest;
+select count(*) as cnt from guest where name='aaa';

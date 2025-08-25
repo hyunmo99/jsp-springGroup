@@ -8,13 +8,13 @@
 	<div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src="images/1-1.jpg" class="d-block  mx-auto" style="height: 600px; width: 80%;"" alt="...">
+	      <img src="${pageContext.request.contextPath}/images/1-1.jpg" class="d-block  mx-auto" style="height: 600px; width: 80%;"" alt="...">
 	    </div>
 	    <div class="carousel-item">
-	      <img src="images/1-2.jpg" class="d-block  mx-auto" style="height: 600px; width: 80%;" alt="...">
+	      <img src="${pageContext.request.contextPath}/images/1-2.jpg" class="d-block  mx-auto" style="height: 600px; width: 80%;" alt="...">
 	    </div>
 	    <div class="carousel-item">
-	      <img src="images/2.jpg" class="d-block  mx-auto" style="height: 600px; width: 80%;" alt="...">
+	      <img src="${pageContext.request.contextPath}/images/2.jpg" class="d-block  mx-auto" style="height: 600px; width: 80%;" alt="...">
 	    </div>
 	  </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
