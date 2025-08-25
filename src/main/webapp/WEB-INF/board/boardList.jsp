@@ -9,10 +9,11 @@
 	<jsp:include page="/include/bs5.jsp" />
   <title>boardList.jsp</title>
   <script>
-  	'use scrict'
+  	'use strict'
 	  function pageSizeCheck() {
-			let pageSize = ${"#pageSize"}.val();
-			location.href="BoardList.bo?pageSize="+pageSize;
+			let pageSize = $("#pageSize").val();
+			let pag = "${pag}";
+			window.location.href="BoardList.bo?pag="+pag+"&pageSize="+pageSize;
 	  }
   </script>
 </head>
@@ -28,10 +29,10 @@
 		<tr>
 			<td><a href="BoardInput.bo" class="btn btn-success btn-sm">글쓰기</a></td>
 			<td class="text-end">
-				<select name="pageSize" id="pageSize" class="form-select form-select-sm" onchange="pageSizeCheck()">
-					<option>5개</option>
-					<option selected>10개</option>
-					<option>15개</option>
+				<select name="pageSize" id="pageSize" class="form-select form-select-sm" onchange="pageSizeCheck()"> 
+					<option value="5" <c:if test="${pageSize==5}">selected</c:if>>5개</option>
+					<option value="10" <c:if test="${pageSize==10}">selected</c:if>>10개</option>
+					<option value="15" <c:if test="${pageSize==15}">selected</c:if>>15개</option>
 				</select>
 			</td>
 		</tr>
@@ -56,27 +57,28 @@
 		</c:forEach>
 	</table>
 <!-- 블록페이지 시작 -->
+
 	<div class="text-center">
 		<ul class="pagination justify-content-center ">
 		  <c:if test="${pag > 1}">
-		  	<li class="page-item"><a href="BoardList.bo?pag=1" class="page-link">첫페이지</a></li>
+		  	<li class="page-item"><a href="BoardList.bo?pag=1&pageSize=${pageSize}" class="page-link">첫페이지</a></li>
 		  </c:if>
 		  <c:if test="${curBlock > 0}">
-		  	<li class="page-item"><a href="BoardList.bo?pag=${(curBlock-1)*blockSize + 1}" class="page-link">이전블록</a><li class="page-item">
+		  	<li class="page-item"><a href="BoardList.bo?pag=${(curBlock-1)*blockSize + 1}&pageSize=${pageSize}" class="page-link">이전블록</a><li class="page-item">
 		  </c:if>
 		  <c:forEach var="i" begin="${(curBlock*blockSize)+1}" end="${(curBlock*blockSize)+blockSize}" varStatus="st">
 		  	<c:if test="${i <= totPage && i == pag}">
-		  		<li class="page-item"><a href="BoardList.bo?pag=${i}" class="page-link"><font color="red"><b>${i}</b></font></a></li>
+		  		<li class="page-item"><a href="BoardList.bo?pag=${i}&pageSize=${pageSize}" class="page-link"><font color="red"><b>${i}</b></font></a></li>
 		  	</c:if>
 		  	<c:if test="${i <= totPage && i != pag}">
-		  		<li class="page-item"><a href="BoardList.bo?pag=${i}" class="page-link">${i}</a></li>
+		  		<li class="page-item"><a href="BoardList.bo?pag=${i}&pageSize=${pageSize}" class="page-link">${i}</a></li>
 		  	</c:if>
 		  </c:forEach>
 		  <c:if test="${curBlock < lastBlock}">
-		  	<li class="page-item"><a href="BoardList.bo?pag=${(curBlock+1)*blockSize + 1}" class="page-link">다음블록</a></li>
+		  	<li class="page-item"><a href="BoardList.bo?pag=${(curBlock+1)*blockSize + 1}&pageSize=${pageSize}" class="page-link">다음블록</a></li>
 		  </c:if>
 		  <c:if test="${pag < totPage}">
-		  	<li class="page-item"><a href="BoardList.bo?pag=${totPage}" class="page-link">마지막페이지</a></li>
+		  	<li class="page-item"><a href="BoardList.bo?pag=${totPage}&pageSize=${pageSize}" class="page-link">마지막페이지</a></li>
 		  </c:if>
 		</ul>
 	</div>
