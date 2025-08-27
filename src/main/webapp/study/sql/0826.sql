@@ -150,7 +150,7 @@ select name, ipsail, to_days(now()) - to_days(ipsail) from insa;
 
 select now(), datediff(now(), '2025-8-1');
 select now(), datediff(now(), ipsail) from insa;
-
+select now(), datediff(now(), wDate) from board order by idx desc;
 select now(), timediff(now(), '2025-8-26 9:30');
 
 -- 시간차이(timestampdiff()) : 시(hour), 분(minute), 초(second)

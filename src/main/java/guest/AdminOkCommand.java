@@ -31,7 +31,6 @@ public class AdminOkCommand implements CommonInterface {
 				session.setAttribute("sAdmin", "adminOK");
 				request.setAttribute("message", "관리자 인증 성공!!!");
 				request.setAttribute("url", "GuestList.gu");
-				
 			}
 		}
 		else {
