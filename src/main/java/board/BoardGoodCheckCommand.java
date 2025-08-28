@@ -31,8 +31,6 @@ public class BoardGoodCheckCommand implements CommonInterface {
 			contentReadNum.add(tempContentReadNum);
 		}
 		session.setAttribute("sContentIdx", contentReadNum);
-		
 		response.getWriter().write(res + "");
 	}
-
 }

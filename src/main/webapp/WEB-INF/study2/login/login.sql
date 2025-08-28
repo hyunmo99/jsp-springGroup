@@ -11,6 +11,7 @@ CREATE TABLE friend(
 	age INT DEFAULT 20,
 	gender CHAR(2) DEFAULT '여자',
 	address VARCHAR(30),
+	photo varchar(50),     /*회원사진*/
 	UNIQUE KEY(mid),
 	UNIQUE KEY(nickName)
 );

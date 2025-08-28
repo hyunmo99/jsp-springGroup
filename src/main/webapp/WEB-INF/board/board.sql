@@ -25,11 +25,14 @@ select *from board;
 select now(), datediff(now(), wDate) from board order by idx desc;
 	select *,
 	timestampdiff(hour, wDate, now()) as hour_diff, 
-	datediff(now(), wDate) as date_diff 
-	from board order by idx desc limit 0, 10;
+	datediff(now(), wDate) as date_diff,
+	(select count(*) from boardReply where boardIdx = b.idx) as replyCnt
+	from board b order by idx desc limit 0, 10;
 	
-	
+
 select *from board order by idx desc;
+select count(*) as replyCnt from boardReply where boardIdx = 19;
+
 -- 이전글 / 다음글 처리(예: 현재글은 idx 12번이라고 가정한다
 select idx, title from board where idx < 12 order by idx desc limit 1; --이전글
 select idx, title from board where idx > 12 order by idx limit 1; --다음글
