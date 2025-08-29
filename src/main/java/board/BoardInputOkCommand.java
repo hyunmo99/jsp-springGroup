@@ -34,11 +34,11 @@ public class BoardInputOkCommand implements CommonInterface {
 		
 		if(res!=0) {
 			request.setAttribute("message", "게시글이 등록되었습니다.");
-			request.setAttribute("url", "BoardList.bo");
+			request.setAttribute("url", "BoardList.pds");
 		}
 		else {
 			request.setAttribute("message", "게시글 등록실패.");
-			request.setAttribute("url", "BoardInput.bo");
+			request.setAttribute("url", "BoardInput.pds");
 		}
 	}
 

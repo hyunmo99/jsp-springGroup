@@ -9,13 +9,15 @@ public class PdsVO {
 	private int fSize;
 	private String part;
 	private String title;
-	private String contnet;
+	private String content;
 	private String openSw;
 	private String pwd;
 	private String hostIp;
 	private String fDate;
 	private int downNum;
 	
+	private int hour_diff; 
+	private int date_diff;
 	public int getIdx() {
 		return idx;
 	}
@@ -64,11 +66,11 @@ public class PdsVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContnet() {
-		return contnet;
+	public String getContent() {
+		return content;
 	}
-	public void setContnet(String contnet) {
-		this.contnet = contnet;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public String getOpenSw() {
 		return openSw;
@@ -100,11 +102,25 @@ public class PdsVO {
 	public void setDownNum(int downNum) {
 		this.downNum = downNum;
 	}
-	
+	public int getHour_diff() {
+		return hour_diff;
+	}
+	public void setHour_diff(int hour_diff) {
+		this.hour_diff = hour_diff;
+	}
+	public int getDate_diff() {
+		return date_diff;
+	}
+	public void setDate_diff(int date_diff) {
+		this.date_diff = date_diff;
+	}
 	@Override
 	public String toString() {
 		return "PdsVO [idx=" + idx + ", mid=" + mid + ", nickName=" + nickName + ", fName=" + fName + ", fSName=" + fSName
-				+ ", fSize=" + fSize + ", part=" + part + ", title=" + title + ", contnet=" + contnet + ", openSw=" + openSw
-				+ ", pwd=" + pwd + ", hostIp=" + hostIp + ", fDate=" + fDate + ", downNum=" + downNum + "]";
-	}
+				+ ", fSize=" + fSize + ", part=" + part + ", title=" + title + ", content=" + content + ", openSw=" + openSw
+				+ ", pwd=" + pwd + ", hostIp=" + hostIp + ", fDate=" + fDate + ", downNum=" + downNum + ", hour_diff="
+				+ hour_diff + ", date_diff=" + date_diff + "]";
+	} 
+	
+
 }

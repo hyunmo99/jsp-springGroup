@@ -20,6 +20,7 @@
   	<div class="col"><a href="FileUpload1.st" class="btn btn-success">파일업로드1</a></div>
   	<div class="col"><a href="FileUpload2.st" class="btn btn-primary">파일업로드2</a></div>
   	<div class="col"><a href="FileUpload3.st" class="btn btn-info">파일업로드3</a></div>
+  	<div class="col"><a href="FileUpload4.st" class="btn btn-warning">파일업로드4(과제)</a></div>
   </div>
   	<hr/>
   	<div class="row">
